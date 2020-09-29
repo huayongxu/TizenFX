@@ -16,14 +16,12 @@
  */
 
 using System;
-using System.ComponentModel;
 
 namespace Tizen.NUI
 {
     /// <summary>
     /// Event arguments that passed via the WebView.PageLoadStarted or WebView.PageLoadFinished.
     /// </summary>
-    [EditorBrowsable(EditorBrowsableState.Never)]
     public class WebViewPageLoadEventArgs : EventArgs
     {
         private WebView _webView;
@@ -32,7 +30,6 @@ namespace Tizen.NUI
         /// <summary>
         /// The view for displaying webpages.
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Never)]
         public WebView WebView
         {
             get
@@ -48,7 +45,6 @@ namespace Tizen.NUI
         /// <summary>
         /// The url string of current webpage.
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Never)]
         public string PageUrl
         {
             get
