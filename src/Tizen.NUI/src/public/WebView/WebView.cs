@@ -703,7 +703,7 @@ namespace Tizen.NUI
         /// <param name="data">The data of Web</param>
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
-        public void LoadHTMLString(string data)
+        public void LoadHtmlString(string data)
         {
             Interop.WebView.LoadHtmlString(SwigCPtr, data);
             if (NDalicPINVOKE.SWIGPendingException.Pending) throw NDalicPINVOKE.SWIGPendingException.Retrieve();
