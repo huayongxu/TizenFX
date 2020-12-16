@@ -365,6 +365,7 @@ namespace Tizen.NUI
         /// The url to load.
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public string Url
         {
             get
@@ -382,6 +383,7 @@ namespace Tizen.NUI
         /// Deprecated. The cache model of the current WebView.
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public CacheModel CacheModel
         {
             get
@@ -398,6 +400,7 @@ namespace Tizen.NUI
         /// Deprecated. The cookie acceptance policy.
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public CookieAcceptPolicy CookieAcceptPolicy
         {
             get
@@ -431,6 +434,7 @@ namespace Tizen.NUI
         /// Deprecated. Whether JavaScript is enabled.
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public bool EnableJavaScript
         {
             get
@@ -447,6 +451,7 @@ namespace Tizen.NUI
         /// Deprecated. Whether images can be loaded automatically.
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public bool LoadImagesAutomatically
         {
             get
@@ -464,6 +469,7 @@ namespace Tizen.NUI
         /// e.g. "UTF-8"<br />
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public string DefaultTextEncodingName
         {
             get
@@ -480,6 +486,7 @@ namespace Tizen.NUI
         /// The default font size in pixel.
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public int DefaultFontSize
         {
             get
@@ -692,6 +699,7 @@ namespace Tizen.NUI
         /// <param name="url">The path of Web</param>
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public void LoadUrl(string url)
         {
             Interop.WebView.LoadUrl(SwigCPtr, url);
@@ -703,17 +711,18 @@ namespace Tizen.NUI
         /// <param name="data">The data of Web</param>
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
-        public void LoadHtmlString(string data)
+        [Obsolete("This function is obsolete. Please use LoadHtmlString instead.")]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public void LoadHTMLString(string data)
         {
             Interop.WebView.LoadHtmlString(SwigCPtr, data);
             if (NDalicPINVOKE.SWIGPendingException.Pending) throw NDalicPINVOKE.SWIGPendingException.Retrieve();
         }
 
-        /// <summary>
-        /// Loads a html by string.
+        /// Loads a string in html style.
         /// <param name="data">The data of Web</param>
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Never)]
+        /// <since_tizen> 8 </since_tizen>
         public void LoadHtmlString(string data)
         {
             Interop.WebView.LoadHtmlString(SwigCPtr, data);
@@ -933,6 +942,7 @@ namespace Tizen.NUI
         /// Clears the history of current WebView.
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public void ClearHistory()
         {
             Interop.WebView.ClearHistory(SwigCPtr);
@@ -943,6 +953,7 @@ namespace Tizen.NUI
         /// Deprecated. Clears the cache of current WebView.
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public void ClearCache()
         {
             Context.ClearCache();
@@ -952,6 +963,7 @@ namespace Tizen.NUI
         /// Deprecated. Clears all the cookies of current WebView.
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public void ClearCookies()
         {
             CookieManager.ClearCookies();

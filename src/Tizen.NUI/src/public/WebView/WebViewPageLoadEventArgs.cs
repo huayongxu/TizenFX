@@ -16,6 +16,7 @@
  */
 
 using System;
+using System.ComponentModel;
 
 namespace Tizen.NUI
 {
@@ -48,16 +49,7 @@ namespace Tizen.NUI
         /// The url string of current webpage.
         /// </summary>
         /// <since_tizen> 8 </since_tizen>
-        public string PageUrl
-        {
-            get
-            {
-                return _pageUrl;
-            }
-            set
-            {
-                _pageUrl = value;
-            }
-        }
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public string PageUrl { get; set; }
     }
 }
