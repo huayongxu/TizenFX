@@ -25,9 +25,9 @@ using Tizen.NUI.Binding;
 namespace Tizen.NUI
 {
     /// <summary>
-    /// WebView
+    /// WebView is a control for web page display. Its backend is web engine(chromium-efl).
     /// </summary>
-    /// <since_tizen> 8 </since_tizen>
+    /// <since_tizen> 9 </since_tizen>
     public class WebView : View
     {
         private readonly WebViewPageLoadSignal pageLoadStartedSignal;
@@ -364,7 +364,7 @@ namespace Tizen.NUI
         /// <summary>
         /// The url to load.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public string Url
         {
@@ -382,7 +382,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. The cache model of the current WebView.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public CacheModel CacheModel
         {
@@ -399,7 +399,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. The cookie acceptance policy.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public CookieAcceptPolicy CookieAcceptPolicy
         {
@@ -416,7 +416,7 @@ namespace Tizen.NUI
         /// <summary>
         /// The user agent string.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public string UserAgent
         {
             get
@@ -433,7 +433,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. Whether JavaScript is enabled.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public bool EnableJavaScript
         {
@@ -450,7 +450,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. Whether images can be loaded automatically.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public bool LoadImagesAutomatically
         {
@@ -468,7 +468,7 @@ namespace Tizen.NUI
         /// The default text encoding name.<br />
         /// e.g. "UTF-8"<br />
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public string DefaultTextEncodingName
         {
@@ -485,7 +485,7 @@ namespace Tizen.NUI
         /// <summary>
         /// The default font size in pixel.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public int DefaultFontSize
         {
@@ -698,7 +698,7 @@ namespace Tizen.NUI
         /// Loads a html.
         /// <param name="url">The path of Web</param>
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void LoadUrl(string url)
         {
@@ -732,7 +732,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Reloads the Web
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public void Reload()
         {
             Interop.WebView.Reload(SwigCPtr);
@@ -742,7 +742,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Stops loading the Web
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public void StopLoading()
         {
             Interop.WebView.StopLoading(SwigCPtr);
@@ -752,7 +752,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Suspends the operation.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public void Suspend()
         {
             Interop.WebView.Suspend(SwigCPtr);
@@ -762,7 +762,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Resumes the operation after calling Suspend()
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public void Resume()
         {
             Interop.WebView.Resume(SwigCPtr);
@@ -784,7 +784,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Goes to the back
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public void GoBack()
         {
             Interop.WebView.GoBack(SwigCPtr);
@@ -794,7 +794,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Goes to the forward
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public void GoForward()
         {
             Interop.WebView.GoForward(SwigCPtr);
@@ -805,7 +805,7 @@ namespace Tizen.NUI
         /// Returns whether backward is possible.
         /// <returns>True if backward is possible, false otherwise</returns>
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public bool CanGoBack()
         {
             bool ret = Interop.WebView.CanGoBack(SwigCPtr);
@@ -817,7 +817,7 @@ namespace Tizen.NUI
         /// Returns whether forward is possible.
         /// <returns>True if forward is possible, false otherwise</returns>
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public bool CanGoForward()
         {
             bool ret = Interop.WebView.CanGoForward(SwigCPtr);
@@ -829,7 +829,7 @@ namespace Tizen.NUI
         /// Evaluates JavaScript code represented as a string.
         /// <param name="script">The JavaScript code</param>
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public void EvaluateJavaScript(string script)
         {
             Interop.WebView.EvaluateJavaScript(SwigCPtr, script, new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero));
@@ -841,7 +841,7 @@ namespace Tizen.NUI
         /// <param name="objectName">The name of exposed object</param>
         /// <param name="handler">The callback function</param>
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public void AddJavaScriptMessageHandler(string objectName, JavaScriptMessageHandler handler)
         {
             if (handlerRootMap.ContainsKey(objectName))
@@ -941,7 +941,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Clears the history of current WebView.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void ClearHistory()
         {
@@ -952,7 +952,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. Clears the cache of current WebView.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void ClearCache()
         {
@@ -962,7 +962,7 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. Clears all the cookies of current WebView.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void ClearCookies()
         {

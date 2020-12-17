@@ -23,7 +23,7 @@ namespace Tizen.NUI
     /// <summary>
     /// Event arguments that passed via the WebView.PageLoadStarted or WebView.PageLoadFinished.
     /// </summary>
-    /// <since_tizen> 8 </since_tizen>
+    /// <since_tizen> 9 </since_tizen>
     public class WebViewPageLoadEventArgs : EventArgs
     {
         private WebView _webView;
@@ -48,7 +48,7 @@ namespace Tizen.NUI
         /// <summary>
         /// The url string of current webpage.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public string PageUrl { get; set; }
     }
