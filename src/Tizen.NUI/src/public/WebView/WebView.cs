@@ -698,6 +698,11 @@ namespace Tizen.NUI
         /// Loads a html.
         /// <param name="url">The path of Web</param>
         /// </summary>
+        /// <remarks>
+        /// http://tizen.org/privilege/internet is needed if the url is relevant to the internet.
+        /// http://tizen.org/privilege/mediastorage is needed if the url is relevant to media storage.
+        /// http://tizen.org/privilege/externalstorage is needed if the url is relevant to external storage.
+        /// </remarks>
         /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void LoadUrl(string url)
@@ -719,10 +724,11 @@ namespace Tizen.NUI
             if (NDalicPINVOKE.SWIGPendingException.Pending) throw NDalicPINVOKE.SWIGPendingException.Retrieve();
         }
 
+        /// <summary>
         /// Loads a string in html style.
         /// <param name="data">The data of Web</param>
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
+        /// <since_tizen> 9 </since_tizen>
         public void LoadHtmlString(string data)
         {
             Interop.WebView.LoadHtmlString(SwigCPtr, data);
