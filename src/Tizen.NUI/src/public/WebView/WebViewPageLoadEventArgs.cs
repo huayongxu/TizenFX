@@ -26,30 +26,16 @@ namespace Tizen.NUI
     /// <since_tizen> 9 </since_tizen>
     public class WebViewPageLoadEventArgs : EventArgs
     {
-        private WebView _webView;
-        private string _pageUrl;
-
         /// <summary>
         /// The view for displaying webpages.
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
-        public WebView WebView
-        {
-            get
-            {
-                return _webView;
-            }
-            set
-            {
-                _webView = value;
-            }
-        }
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public WebView WebView {  get; internal set;  }
 
         /// <summary>
         /// The url string of current webpage.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public string PageUrl { get; set; }
+        public string PageUrl { get; internal set; }
     }
 }

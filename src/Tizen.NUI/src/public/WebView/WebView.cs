@@ -362,9 +362,33 @@ namespace Tizen.NUI
         public WebSettings Settings { get; }
 
         /// <summary>
+        /// The uri to load.
+        /// </summary>
+        /// <remarks>
+        /// http://tizen.org/privilege/internet is needed if the url is relevant to the internet.
+        /// http://tizen.org/privilege/mediastorage is needed if the url is relevant to media storage.
+        /// http://tizen.org/privilege/externalstorage is needed if the url is relevant to external storage.
+        /// </remarks>
+        /// <since_tizen> 9 </since_tizen>
+        public Uri Uri
+        {
+            get
+            {
+                return new Uri((string)GetValue(UrlProperty));
+            }
+            set
+            {
+                if (value != null)
+                {
+                    SetValue(UrlProperty, value.AbsoluteUri);
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
         /// The url to load.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public string Url
         {
@@ -382,7 +406,6 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. The cache model of the current WebView.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public CacheModel CacheModel
         {
@@ -399,7 +422,6 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. The cookie acceptance policy.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public CookieAcceptPolicy CookieAcceptPolicy
         {
@@ -433,7 +455,6 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. Whether JavaScript is enabled.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public bool EnableJavaScript
         {
@@ -450,7 +471,6 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. Whether images can be loaded automatically.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public bool LoadImagesAutomatically
         {
@@ -468,7 +488,6 @@ namespace Tizen.NUI
         /// The default text encoding name.<br />
         /// e.g. "UTF-8"<br />
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public string DefaultTextEncodingName
         {
@@ -485,7 +504,6 @@ namespace Tizen.NUI
         /// <summary>
         /// The default font size in pixel.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public int DefaultFontSize
         {
@@ -696,7 +714,7 @@ namespace Tizen.NUI
 
         /// <summary>
         /// Loads a html.
-        /// <param name="url">The path of Web</param>
+        /// <param name="uri">The path of Web</param>
         /// </summary>
         /// <remarks>
         /// http://tizen.org/privilege/internet is needed if the url is relevant to the internet.
@@ -704,6 +722,22 @@ namespace Tizen.NUI
         /// http://tizen.org/privilege/externalstorage is needed if the url is relevant to external storage.
         /// </remarks>
         /// <since_tizen> 9 </since_tizen>
+        public void LoadUri(Uri uri)
+        {
+            if (uri == null) throw new NullReferenceException("uri is null.");
+            Interop.WebView.LoadUrl(SwigCPtr, uri.AbsolutePath);
+            if (NDalicPINVOKE.SWIGPendingException.Pending) throw NDalicPINVOKE.SWIGPendingException.Retrieve();
+        }
+
+        /// <summary>
+        /// Loads a html.
+        /// <param name="url">The path of Web</param>
+        /// </summary>
+        /// <remarks>
+        /// http://tizen.org/privilege/internet is needed if the url is relevant to the internet.
+        /// http://tizen.org/privilege/mediastorage is needed if the url is relevant to media storage.
+        /// http://tizen.org/privilege/externalstorage is needed if the url is relevant to external storage.
+        /// </remarks>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void LoadUrl(string url)
         {
@@ -715,8 +749,6 @@ namespace Tizen.NUI
         /// Deprecated. Loads a html by string.
         /// <param name="data">The data of Web</param>
         /// </summary>
-        /// <since_tizen> 8 </since_tizen>
-        [Obsolete("This function is obsolete. Please use LoadHtmlString instead.")]
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void LoadHTMLString(string data)
         {
@@ -726,12 +758,12 @@ namespace Tizen.NUI
 
         /// <summary>
         /// Loads a string in html style.
-        /// <param name="data">The data of Web</param>
+        /// <param name="html">The html string of Web</param>
         /// </summary>
         /// <since_tizen> 9 </since_tizen>
-        public void LoadHtmlString(string data)
+        public void LoadHtmlString(string html)
         {
-            Interop.WebView.LoadHtmlString(SwigCPtr, data);
+            Interop.WebView.LoadHtmlString(SwigCPtr, html);
             if (NDalicPINVOKE.SWIGPendingException.Pending) throw NDalicPINVOKE.SWIGPendingException.Retrieve();
         }
 
@@ -947,7 +979,6 @@ namespace Tizen.NUI
         /// <summary>
         /// Clears the history of current WebView.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void ClearHistory()
         {
@@ -958,7 +989,6 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. Clears the cache of current WebView.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void ClearCache()
         {
@@ -968,7 +998,6 @@ namespace Tizen.NUI
         /// <summary>
         /// Deprecated. Clears all the cookies of current WebView.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void ClearCookies()
         {

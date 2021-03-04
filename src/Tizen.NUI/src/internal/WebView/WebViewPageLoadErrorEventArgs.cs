@@ -23,13 +23,13 @@ namespace Tizen.NUI
     /// <summary>
     /// Event arguments that passed via the WebView.PageLoadError.
     /// </summary>
-    /// <since_tizen> 9 </since_tizen>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class WebViewPageLoadErrorEventArgs : EventArgs
     {
         /// <summary>
         /// Enumeration for the load error code
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public enum LoadErrorCode
         {
             /// <summary>
@@ -97,21 +97,19 @@ namespace Tizen.NUI
         /// <summary>
         /// The view for displaying webpages.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public WebView WebView { get; set; }
+        public WebView WebView { get; internal set; }
 
         /// <summary>
         /// The url string of current webpage.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public string PageUrl { get; set; }
+        public string PageUrl { get; internal set; }
 
         /// <summary>
         /// The code for the current error.
         /// </summary>
-        /// <since_tizen> 9 </since_tizen>
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public LoadErrorCode ErrorCode { get; internal set; }
     }
 }
