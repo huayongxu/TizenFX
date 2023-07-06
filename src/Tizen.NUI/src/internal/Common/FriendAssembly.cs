@@ -33,6 +33,7 @@ using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Tizen.TV.FLUX, " + Tizen.NUI.PublicKey.TizenTV)]
 [assembly: InternalsVisibleTo("Tizen.TV.FLUX.Component, " + Tizen.NUI.PublicKey.TizenTV)]
+[assembly: InternalsVisibleTo("Tizen.TV.FLUX.Component.Extension, " + Tizen.NUI.PublicKey.TizenTV)]
 [assembly: InternalsVisibleTo("Tizen.TV.FLUX.Example, " + Tizen.NUI.PublicKey.TizenTV)]
 [assembly: InternalsVisibleTo("Tizen.TV.NUI.Example, " + Tizen.NUI.PublicKey.TizenTV)]
 
